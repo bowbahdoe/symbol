@@ -12,7 +12,7 @@ public class SymbolTest {
     @Test
     public void testSymbolCreation() {
         var s1 = Symbol.of("ABC");
-        var s2 = Symbol.of(new String(new char[] { 'A', 'B', 'C' }));
+        var s2 = Symbol.of(new String(new char[]{'A', 'B', 'C'}));
         assertSame(s1, s2);
         assertEquals(s1, s2);
     }
@@ -25,19 +25,27 @@ public class SymbolTest {
 
         var threads = new ArrayList<Thread>();
 
-        for (int i = 0; i < 100;i++) {
+        for (int i = 0; i < 100; i++) {
             var t = new Thread(() -> {
                 try {
                     Thread.sleep(100);
-                    var s = Symbol.of(new String(new char[] { 'A', 'B', 'C' }));
-                    m.add(s);s = Symbol.of(new String(new char[] { 'A', 'B', 'C' }));
-                    m.add(s);s = Symbol.of(new String(new char[] { 'A', 'B', 'C' }));
-                    m.add(s);s = Symbol.of(new String(new char[] { 'A', 'B', 'C' }));
-                    m.add(s);s = Symbol.of(new String(new char[] { 'A', 'B', 'C' }));
-                    m.add(s);s = Symbol.of(new String(new char[] { 'A', 'B', 'C' }));
-                    m.add(s);s = Symbol.of(new String(new char[] { 'A', 'B', 'C' }));
-                    m.add(s);s = Symbol.of(new String(new char[] { 'A', 'B', 'C' }));
-                    m.add(s);s = Symbol.of(new String(new char[] { 'A', 'B', 'C' }));
+                    var s = Symbol.of(new String(new char[]{'A', 'B'}));
+                    m.add(s);
+                    s = Symbol.of(new String(new char[]{'A', 'B'}));
+                    m.add(s);
+                    s = Symbol.of(new String(new char[]{'A', 'B'}));
+                    m.add(s);
+                    s = Symbol.of(new String(new char[]{'A', 'B'}));
+                    m.add(s);
+                    s = Symbol.of(new String(new char[]{'A', 'B'}));
+                    m.add(s);
+                    s = Symbol.of(new String(new char[]{'A', 'B'}));
+                    m.add(s);
+                    s = Symbol.of(new String(new char[]{'A', 'B'}));
+                    m.add(s);
+                    s = Symbol.of(new String(new char[]{'A', 'B'}));
+                    m.add(s);
+                    s = Symbol.of(new String(new char[]{'A', 'B'}));
                     m.add(s);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
